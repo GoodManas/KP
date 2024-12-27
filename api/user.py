@@ -1,8 +1,8 @@
-from .db import users
+from .db import db
 
 def login(login: str, passw: str):
 
-	value = users.execute(f'''
+	value = db.execute(f'''
 		SELECT * FROM users 
 		WHERE login='{login}' AND password='{passw}'; 
 	''').fetchall()
@@ -13,15 +13,15 @@ def login(login: str, passw: str):
 	raise Exception('Unauthorized')
     
 def register(login, passw):
-	value = users.execute(f'''
+	value = db.execute(f'''
 		SELECT * FROM users 
 		WHERE login='{login}'; 
 	''').fetchall()
 	if value:
 		raise Exception("User with this login already exists")
 
-	users.execute(f"INSERT INTO users (login, password) VALUES ('{login}', '{passw}')")
-	users.commit()
+	db.execute(f"INSERT INTO users (login, password) VALUES ('{login}', '{passw}')")
+	db.commit()
 
 if __name__ == "__main__":
 	try:

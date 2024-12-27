@@ -1,9 +1,9 @@
 import sqlite3
 
-users = sqlite3.connect('db/users.db')
+db = sqlite3.connect('db/time_tracking.db')
 
 if __name__ == "__main__":
-  users.execute('''
+  db.execute('''
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY,
       login TEXT NOT NULL UNIQUE,
