@@ -1,10 +1,10 @@
-from .db import time_tracking
+from .db import users
 
 def login(login: str, passw: str):
 
-	value = time_tracking.execute(f'''
+	value = users.execute(f'''
 		SELECT * FROM users 
-		WHERE login='{login}' and password='{passw}'; 
+		WHERE login='{login}' AND password='{passw}'; 
 	''').fetchall()
 
 	if value:
@@ -13,13 +13,21 @@ def login(login: str, passw: str):
 	raise Exception('Unauthorized')
     
 def register(login, passw):
-	value = time_tracking.execute(f'SELECT * FROM users WHERE login="{login}"; ').fetchall()
+	value = users.execute(f'''
+		SELECT * FROM users 
+		WHERE login='{login}'; 
+	''').fetchall()
 	if value:
 		raise Exception("User with this login already exists")
 
-	time_tracking.execute(f"INSERT INTO users (login, password) VALUES ('{login}') , '{passw}')")
+	users.execute(f"INSERT INTO users (login, password) VALUES ('{login}', '{passw}')")
+	users.commit()
 
 if __name__ == "__main__":
+	try:
+		register("admin", 'admin_password')
+	except:
+		pass
+
 	user = login("admin", 'admin_password')
 	print(user)
-	register("admin", 'admin_password')
