@@ -33,12 +33,14 @@ class Register(QMainWindow):
         name = self.ui.lineEditLog.text()
         passw = self.ui.lineEditPass.text()
         login(name, passw)
+        print('Authorized')
           
     @check_input 
     def reg(self):
         name = self.ui.lineEditLog.text()
         passw = self.ui.lineEditPass.text()
         register(name, passw)
+        print(f'User crerated: {name}')
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
