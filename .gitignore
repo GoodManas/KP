@@ -4,3 +4,4 @@ res_rc.py
 ui_Admin.py
 ui_main.py
 compiled/
+db/
