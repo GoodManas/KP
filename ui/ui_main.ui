@@ -52,7 +52,7 @@ border: 0px solid rgba(0,0,0,0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../../../../../../../../../../../Program Files/games/12/res-rs.qrc">:/icons/icon/Рисунок1.png</pixmap>
+     <pixmap resource="res_rs.qrc">:/icons/icon/Рисунок1.png</pixmap>
     </property>
    </widget>
    <widget class="QFrame" name="Balance_frame">
@@ -128,7 +128,7 @@ background-color:rgba(255,255,255,60)
            <string>Вход</string>
           </property>
           <property name="icon">
-           <iconset resource="../../../../../../../../../../../Program Files/games/12/res-rs.qrc">
+           <iconset resource="res_rs.qrc">
             <normaloff>:/icons/icon/login_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</normaloff>:/icons/icon/login_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</iconset>
           </property>
           <property name="iconSize">
@@ -159,7 +159,7 @@ background-color:rgba(255,255,255,60)
            <string>Регистрация</string>
           </property>
           <property name="icon">
-           <iconset resource="../../../../../../../../../../../Program Files/games/12/res-rs.qrc">
+           <iconset resource="res_rs.qrc">
             <normaloff>:/icons/icon/key_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</normaloff>:/icons/icon/key_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</iconset>
           </property>
           <property name="iconSize">
@@ -178,8 +178,7 @@ background-color:rgba(255,255,255,60)
   </widget>
  </widget>
  <resources>
-  <include location="../../../../../../../../../../../Program Files/games/12/res-rs.qrc"/>
-  <include location="res-rs.qrc"/>
+  <include location="res_rs.qrc"/>
  </resources>
  <connections/>
 </ui>

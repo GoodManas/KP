@@ -5,7 +5,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 # Ваши импорты для CheckThread и Ui_MainWindow
 from compiled.ui_main import Ui_MainWindow
 from compiled.ui_Admin import Ui_Dialog
-from .api.user import login, register
+from api.user import login, register
 
 def check_input(funct):
     def wrapper(self):
