@@ -52,7 +52,7 @@ border: 0px solid rgba(0,0,0,0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="res_rs.qrc">:/icons/icon/Рисунок1.png</pixmap>
+     <pixmap resource="res_rs.qrc">:/icons/icon/image.png</pixmap>
     </property>
    </widget>
    <widget class="QFrame" name="Balance_frame">
@@ -128,8 +128,9 @@ background-color:rgba(255,255,255,60)
            <string>Вход</string>
           </property>
           <property name="icon">
-           <iconset resource="res_rs.qrc">
-            <normaloff>:/icons/icon/login_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</normaloff>:/icons/icon/login_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</iconset>
+            <iconset resource="res_rs.qrc">
+              <normaloff>:/icons/icon/login.png</normaloff>:/icons/icon/login.png
+            </iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -159,8 +160,9 @@ background-color:rgba(255,255,255,60)
            <string>Регистрация</string>
           </property>
           <property name="icon">
-           <iconset resource="res_rs.qrc">
-            <normaloff>:/icons/icon/key_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</normaloff>:/icons/icon/key_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24 (1).png</iconset>
+            <iconset resource="res_rs.qrc">
+              <normaloff>:/icons/icon/key.png</normaloff>:/icons/icon/key.png
+            </iconset>
           </property>
           <property name="iconSize">
            <size>
