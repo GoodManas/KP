@@ -3,11 +3,9 @@ from PySide6 import QtWidgets, QtCore
 from PySide6.QtWidgets import QApplication, QMainWindow
 
 # Ваши импорты для CheckThread и Ui_MainWindow
-from check_db import CheckThread
-from ui_main import Ui_MainWindow
-from ui_Admin import Ui_Dialog
-
-
+from compiled.ui_main import Ui_MainWindow
+from compiled.ui_Admin import Ui_Dialog
+from .api.user import login, register
 
 def check_input(funct):
     def wrapper(self):
@@ -26,9 +24,6 @@ class Register(QMainWindow):
         self.ui.btn_login.clicked.connect(self.auth)
         self.ui.btn_register.clicked.connect(self.reg)
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
-        
-        self.check_db = CheckThread()
-        self.check_db.mysignal.connect(self.signal_handler)
 
     def signal_handler(self, value):
         QtWidgets.QMessageBox.about(self, 'Оповещение', value)
@@ -37,15 +32,13 @@ class Register(QMainWindow):
     def auth(self):
         name = self.ui.lineEditLog.text()
         passw = self.ui.lineEditPass.text()
-        self.check_db.thr_login(name, passw)
+        login(name, passw)
           
     @check_input 
     def reg(self):
         name = self.ui.lineEditLog.text()
         passw = self.ui.lineEditPass.text()
-        self.check_db.thr_register(name, passw)
-        
-    
+        register(name, passw)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
